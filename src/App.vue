@@ -19,9 +19,9 @@
       <div key="elementA" v-if="page == 'Calculators'">
         <Calculator v-if="page == 'Calculators'" />
       </div>
-      <h2 v-else key="elementB">Element B</h2>
+      <AboutMe v-else />
       <!--<Calculator v-if="page == 'Calculators'" key="calcs" />-->
-      <!--<div v-else key="aaboutMe"><h1>HELLO WORLD</h1></div>-->
+      <!--<div v-else key="aboutMe"><h1>HELLO WORLD</h1></div>-->
     </transition>
   </main>
   <footer></footer>
@@ -30,6 +30,7 @@
 <script setup>
 import { ref } from 'vue'
 import Calculator from '@/components/pages/calculator.vue'
+import AboutMe from '@/components/pages/about-me.vue'
 
 const page = ref('Calculators')
 
