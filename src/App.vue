@@ -14,10 +14,14 @@
     </nav>
   </header>
   <main>
-    {{ page }}
-    <transition mode="out-in" name="pageFade" appear>
-      <Calculator v-if="page == 'Calculators'" key="Calculators" />
-      <div v-else-if="page == 'About Me'" key="placeholder"><h1>HELLO WORLD</h1></div>
+    <transition name="pageFade" mode="out-in" appear>
+      <!--Transition did not want to seem to work adding the key directly to custom component-->
+      <div key="elementA" v-if="page == 'Calculators'">
+        <Calculator v-if="page == 'Calculators'" />
+      </div>
+      <h2 v-else key="elementB">Element B</h2>
+      <!--<Calculator v-if="page == 'Calculators'" key="calcs" />-->
+      <!--<div v-else key="aaboutMe"><h1>HELLO WORLD</h1></div>-->
     </transition>
   </main>
   <footer></footer>

@@ -1,9 +1,7 @@
 <template>
   <!--This renders the cards for all of the available calculators-->
-  <div>
-    <div v-for="(card, index) in calcStore.calcCards" :key="index" class="cardWrapper">
-      <CalcCard :card="card" />
-    </div>
+  <div v-for="(card, index) in calcStore.calcCards" :key="index" class="cardWrapper">
+    <CalcCard :card="card" />
   </div>
 </template>
 
