@@ -17,7 +17,7 @@
     <transition name="pageFade" mode="out-in" appear>
       <!--Transition did not want to seem to work adding the key directly to custom component-->
       <div key="elementA" v-if="page == 'Calculators'">
-        <Calculator v-if="page == 'Calculators'" />
+        <Calculator v-if="page == 'Calculators'" @displayCalculator="displayCalculator" />
       </div>
       <AboutMe v-else />
       <!--<Calculator v-if="page == 'Calculators'" key="calcs" />-->
@@ -33,6 +33,10 @@ import Calculator from '@/components/pages/calculator.vue'
 import AboutMe from '@/components/pages/about-me.vue'
 
 const page = ref('Calculators')
+const showModal = ref(false)
+
+//THis will be the type of calculator or an error modal (only necessary for a backend integration).
+const modalType = ref('')
 
 const navOptions = [
   {
@@ -48,6 +52,8 @@ const navOptions = [
 const changePage = (nextPage) => {
   page.value = nextPage
 }
+
+const displayCalculator = (calculator) => {}
 </script>
 
 <style scoped>

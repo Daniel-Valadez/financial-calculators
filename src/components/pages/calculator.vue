@@ -12,4 +12,4 @@ import CalcCard from '../cards/calcCard.vue'
 const calcStore = useCalculatorStore()
 </script>
 
-<style></style>
+<style scoped></style>
